@@ -1,0 +1,65 @@
+@import "mixins.scss";
+
+.dropdown-menu {
+	max-height: 85%;
+
+	h2 {
+		place-self: center;
+		text-decoration: underline 1px solid #5a5a5a;
+		margin-bottom: 15px;
+	}
+
+	ul {
+		list-style: none;
+		overflow-y: scroll;
+		-ms-overflow-style: none; /* Internet Explorer 10+ */
+		scrollbar-width: none; /* Firefox */
+		&::-webkit-scrollbar {
+			display: none; /* Safari and Chrome */
+		}
+
+		text-align: left;
+
+		.item {
+			min-height: 70px;
+			@include flexify(row, space-around, flex-end);
+			position: relative;
+			width: 100%;
+			border-bottom: 1px solid #5a5a5a88;
+			padding: 6px;
+
+			button {
+				position: absolute;
+				background: none;
+				border: none;
+				cursor: pointer;
+				height: 30px;
+				width: 30px;
+				padding: 7px;
+			}
+
+			&_remove {
+				&:before {
+					content: url("./images/remove.svg");
+				}
+
+				left: calc(100% - 35px);
+			}
+
+			&_restore {
+				&:before {
+					content: url("./images/restore.svg");
+				}
+
+				top: 0;
+				left: calc(100% - 35px);
+			}
+
+			&_text {
+				width: calc(100% - 50px);
+
+				word-break: break-all;
+			}
+		}
+	}
+}

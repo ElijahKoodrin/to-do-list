@@ -1,0 +1,57 @@
+@import 'mixins.scss';
+
+.overlay {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.753);
+	z-index: 100;
+	@include flexify(row, center, center);
+
+
+	.modal {
+		width: 750px;
+		background: white;
+		border-radius: 10px;
+		padding: 30px;
+		position: relative;
+		@include flexify(column, 0, 0);
+
+		textarea {
+			max-width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid rgba(0, 0, 0, 0.301);
+			transition: .3s border ease-in, .3s box-shadow ease-in;
+
+			&:focus {
+				border: 1px solid rgba(0, 0, 0, 0.301);
+				outline: none;
+				box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(27, 220, 227, 0);
+			}
+		}
+
+		button {
+			border-radius: 5px;
+			border: none;
+			margin-top: .4rem;
+			padding: 10px 20px;
+			font-size: 20px;
+			width: 100%;
+			color: white;
+			cursor: pointer;
+		}
+
+		&_btn {
+			margin-top: 1rem;
+			background: blueviolet;
+
+		}
+
+		&_close {
+			background: rgb(193, 15, 15);
+		}
+	}
+}
